@@ -14,9 +14,9 @@ public class PalindromeCheckerApp {
 
         String normalized = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
 
-
-
         boolean isPalindrome = true;
+
+
         for (int i = 0; i < normalized.length() / 2; i++) {
 
 
@@ -26,7 +26,7 @@ public class PalindromeCheckerApp {
             }
         }
 
-        System.out.println("Is  it Palindrome? : " + isPalindrome);
+        System.out.println("Is Palindrome? : " + isPalindrome);
 
         scanner.close();
     }
