@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class UseCase12PalindromeCheckerApp {
+public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
@@ -9,7 +9,7 @@ public class UseCase12PalindromeCheckerApp {
         System.out.print("Input : ");
         String input = scanner.nextLine();
 
-        
+
         PalindromeStrategy strategy = new StackStrategy();
 
 
