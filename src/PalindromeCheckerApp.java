@@ -1,9 +1,6 @@
 import java.util.Scanner;
 
 public class PalindromeCheckerApp {
-
-
-
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -12,22 +9,40 @@ public class PalindromeCheckerApp {
         String input = scanner.nextLine();
 
 
-        String normalized = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        PalindromeService service = new PalindromeService();
 
 
+        boolean result = service.checkPalindrome(input);
 
-        boolean isPalindrome = true;
-        for (int i = 0; i < normalized.length() / 2; i++) {
-
-
-            if (normalized.charAt(i) != normalized.charAt(normalized.length() - 1 - i)) {
-                isPalindrome = false;
-                break;
-            }
-        }
-
-        System.out.println("Is  it Palindrome? : " + isPalindrome);
+        System.out.println("Is Palindrome? : " + result);
 
         scanner.close();
+    }
+}
+
+
+class PalindromeService {
+
+    public boolean checkPalindrome(String input) {
+
+
+        input = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+
+
+        int start = 0;
+        int end = input.length() - 1;
+
+
+        while (start < end) {
+
+            if (input.charAt(start) != input.charAt(end)) {
+                return false;
+            }
+
+            start++;
+            end--;
+        }
+
+        return true;
     }
 }
